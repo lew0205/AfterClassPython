@@ -203,3 +203,229 @@ TypeError: %d format: a number is required, not str
 >>> "i want to %s %s %d" %(what, place, howmuch)
 'i want to go home 3000'
 >>> 
+Python 3.9.6 (tags/v3.9.6:db3ff76, Jun 28 2021, 15:26:21) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> "Error is %d%%."%98
+'Error is 98%.'
+>>> "%s" %"hi"
+'hi'
+>>> "%10s" %"hi"
+'        hi'
+>>> "%-10s" "%hi"
+'%-10s%hi'
+>>> "%-10s" %"hi"
+'hi        '
+>>> "%-20s" %"hi"
+'hi                  '
+>>> "%-20s eunwoo" %"hi"
+'hi                   eunwoo'
+>>> "%0.4f" %3.25987654
+'3.2599'
+>>> "%10.4f" %3.25987654
+'    3.2599'
+>>> 
+>>> "I eat {0} apples." .format(3)
+'I eat 3 apples.'
+>>> 
+>>> "I eat {0} apples." .format("five")
+'I eat five apples.'
+>>> num=3
+>>> "i eat {0} apples." .format(num)
+'i eat 3 apples.'
+>>> num=8
+>>> day='three'
+>>> num
+8
+>>> day
+'three'
+>>> "I eat {0} apples. so I was sick for {1} days." .format(num,day)
+'I eat 8 apples. so I was sick for three days.'
+>>> place="home"
+>>> howmuch=3000
+>>> what="go"
+>>> "i want to {0} {1} {2}" .format(what, place, howmuch)
+'i want to go home 3000'
+>>> "i eat {num} apples. so i was sick for {day} days.".format(num=10,day=3)
+'i eat 10 apples. so i was sick for 3 days.'
+>>> "i eat {0} apples. so i was sick for {day} days.".format(10,day=3)
+'i eat 10 apples. so i was sick for 3 days.'
+>>> "{0:<10}".format("hi")
+'hi        '
+>>> "{0:>10}".format("hi")
+'        hi'
+>>> "{0:^10}".format("hi")
+'    hi    '
+>>> "{0:=^10}".format("hi")
+'====hi===='
+>>> "{0:!<10}".format("hi")
+'hi!!!!!!!!'
+>>> y=3.265984756
+>>> "{0:0.4f}".format(y)
+'3.2660'
+>>> "{0:10.4f}".format(y)
+'    3.2660'
+>>> "{{ eunwoo }}".format()
+'{ eunwoo }'
+>>> name='홍길동'
+>>> age=50
+>>> f'나의 이름은 {name}입니다. 나이는 {age}입니다.'
+'나의 이름은 홍길동입니다. 나이는 50입니다.'
+>>> f'나의 이름은 {name}입니다. 나이는 {age+1}입니다.'
+'나의 이름은 홍길동입니다. 나이는 51입니다.'
+>>> d={'name':'홍길동','age':30}
+>>> f'나의 이름은 {d["name"]}입니다. 나이는 {d["age"]}입니다.'
+'나의 이름은 홍길동입니다. 나이는 30입니다.'
+>>> f'{"hi":<10}'
+'hi        '
+>>> f'{"hi":>10}'
+'        hi'
+>>> f'{"hi":^10}'
+'    hi    '
+>>> f'{"hi":=^10}'
+'====hi===='
+>>> f'{"hi":!<10}'
+'hi!!!!!!!!'
+>>> y=3.235678745
+>>> f'{y:0.4f}'
+'3.2357'
+>>> f'{y:10.4f}'
+'    3.2357'
+>>> f'{{eunwoo}}'
+'{eunwoo}'
+>>> "{0:!^12}".format("python")
+'!!!python!!!'
+>>> f'{"python":!^12}'
+'!!!python!!!'
+>>> a='eunwoo'
+>>> a
+'eunwoo'
+>>> a.count('o')
+2
+>>> b='i want to go home'
+>>> b.count('o')
+3
+>>> b.find('w')
+2
+>>> a.find('w')
+3
+>>> b.index('w')
+2
+>>> b.find('o')
+8
+>>> b.index('o')
+8
+>>> a.index('w')
+3
+>>> ",".join('eunwoo')
+'e,u,n,w,o,o'
+>>> ",".join(['a','b','c','d'])
+'a,b,c,d'
+>>> a
+'eunwoo'
+>>> a.upper()
+'EUNWOO'
+>>> c="SUNNY"
+>>> c
+'SUNNY'
+>>> c.lower()
+'sunny'
+>>> a="    hi"
+>>> a
+'    hi'
+>>> a.lstrip()
+'hi'
+>>> a="    hi    "
+>>> a.rstrip()
+'    hi'
+>>> a.strip()
+'hi'
+>>> a.lstrip()
+'hi    '
+>>> a="life is too short"
+>>> a
+'life is too short'
+>>> a.replace("life","your leg")
+'your leg is too short'
+>>> a
+'life is too short'
+>>> a.split()
+['life', 'is', 'too', 'short']
+>>> b="a/g/f/r/e"
+>>> b
+'a/g/f/r/e'
+>>> b.split('/')
+['a', 'g', 'f', 'r', 'e']
+>>> odd=[1,3,5,7,9]
+>>> odd
+[1, 3, 5, 7, 9]
+>>> a=[]
+a
+>>> 
+>>> a
+[]
+>>> b=[1,2,3]
+>>> b
+[1, 2, 3]
+>>> c=['life is too short']
+>>> c
+['life is too short']
+>>> d=[1,2,'life','too']
+>>> d
+[1, 2, 'life', 'too']
+>>> e=[1,2,'life',['is','too']]
+>>> e
+[1, 2, 'life', ['is', 'too']]
+>>> b[0]
+1
+>>> b[1]
+2
+>>> b[2]
+3
+>>> b[0]+b[2]
+4
+>>> b[-1]
+3
+>>> e[-1]
+['is', 'too']
+>>> e[3][0]
+'is'
+>>> e[3][1]
+'too'
+>>> q=[1,2,['a','b',['life','too']]]
+>>> q
+[1, 2, ['a', 'b', ['life', 'too']]]
+>>> q[2][2][0]
+'life'
+>>> b
+[1, 2, 3]
+>>> b=[1,2,3,4,5]
+>>> b
+[1, 2, 3, 4, 5]
+>>> b[0:2]
+[1, 2]
+>>> a="12345"
+>>> a
+'12345'
+>>> a[0:2]
+'12'
+>>> b[:2]
+[1, 2]
+>>> b[3:]
+[4, 5]
+>>> b
+[1, 2, 3, 4, 5]
+>>> g=b[:2]
+>>> t=b[3:]
+>>> g
+[1, 2]
+>>> t
+[4, 5]
+>>> t[0]
+4
+>>> g[-1]
+2
+>>> A=[1,2,3,4,5]
+>>> B=A[1:3]
+>>> B
+[2, 3]
+>>> 
