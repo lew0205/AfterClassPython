@@ -202,7 +202,7 @@ TypeError: %d format: a number is required, not str
 >>> what="go"
 >>> "i want to %s %s %d" %(what, place, howmuch)
 'i want to go home 3000'
->>> 
+
 Python 3.9.6 (tags/v3.9.6:db3ff76, Jun 28 2021, 15:26:21) [MSC v.1929 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license()" for more information.
 >>> "Error is %d%%."%98
@@ -428,4 +428,549 @@ a
 >>> B=A[1:3]
 >>> B
 [2, 3]
+>>> s=[1,2,3,['a','b','c'],4,5]
+>>> s
+[1, 2, 3, ['a', 'b', 'c'], 4, 5]
+>>> a[2:5]
+'345'
+>>> s[3:5]
+[['a', 'b', 'c'], 4]
+>>> s[3][:2]
+['a', 'b']
+>>> a=[1,2,3]
+>>> b=[4,5,6]
+>>> a+b
+[1, 2, 3, 4, 5, 6]
+>>> c=a+b
+>>> c
+[1, 2, 3, 4, 5, 6]
+>>> 'abc'+'def'
+'abcdef'
+>>> a*3
+[1, 2, 3, 1, 2, 3, 1, 2, 3]
+>>> len(a)
+3
+>>> len(s)
+6
+>>> a[2]+"hi"
+Traceback (most recent call last):
+  File "<pyshell#160>", line 1, in <module>
+    a[2]+"hi"
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> str(a[2])+"hi"
+'3hi'
+>>> a
+[1, 2, 3]
+>>> a[2]=4
+>>> a
+[1, 2, 4]
+>>> del a[2]
+>>> a
+[1, 2]
+>>> a=[1,2,3,4,5,6,7]
+>>> a
+[1, 2, 3, 4, 5, 6, 7]
+>>> del a[2:]
+>>> a
+[1, 2]
+>>> a=[1,2,3]
+>>> a.append(4)
+>>> a
+[1, 2, 3, 4]
+>>> a.append("hi")
+>>> a
+[1, 2, 3, 4, 'hi']
+>>> a.append([5,6])
+>>> a
+[1, 2, 3, 4, 'hi', [5, 6]]
+>>> b=[5,6,9,8,4,5,1,2]
+>>> b.sort()
+>>> b
+[1, 2, 4, 5, 5, 6, 8, 9]
+>>> d=['g','h','t','a']
+>>> d
+['g', 'h', 't', 'a']
+>>> d.sort()
+>>> d
+['a', 'g', 'h', 't']
+>>> b
+[1, 2, 4, 5, 5, 6, 8, 9]
+>>> b.reverse()
+>>> b
+[9, 8, 6, 5, 5, 4, 2, 1]
+>>> d=['b','c','a']
+>>> d
+['b', 'c', 'a']
+>>> d.reverse()
+>>> d
+['a', 'c', 'b']
+>>> d.sort()
+>>> d
+['a', 'b', 'c']
+>>> b
+[9, 8, 6, 5, 5, 4, 2, 1]
+>>> b.index(4)
+5
+>>> b.index(5)
+3
+>>> b.index(3)
+Traceback (most recent call last):
+  File "<pyshell#200>", line 1, in <module>
+    b.index(3)
+ValueError: 3 is not in list
+>>> d
+['a', 'b', 'c']
+>>> d.append('e')
+>>> d
+['a', 'b', 'c', 'e']
+>>> d.insert(3,'d')
+>>> d
+['a', 'b', 'c', 'd', 'e']
+>>> d.remove('b')
+>>> d
+['a', 'c', 'd', 'e']
+>>> d.append('e')
+>>> d.append('t')
+>>> d.append('e')
+>>> d
+['a', 'c', 'd', 'e', 'e', 't', 'e']
+>>> d.remove('e')
+>>> d
+['a', 'c', 'd', 'e', 't', 'e']
+>>> d.remove('e')
+>>> d
+['a', 'c', 'd', 't', 'e']
+>>> a
+[1, 2, 3, 4, 'hi', [5, 6]]
+>>> a.pop()
+[5, 6]
+>>> a
+[1, 2, 3, 4, 'hi']
+>>> s
+[1, 2, 3, ['a', 'b', 'c'], 4, 5]
+>>> t=[1,2,3,4,4,5,6,6]
+>>> t
+[1, 2, 3, 4, 4, 5, 6, 6]
+>>> t.count(4)
+2
+>>> t.extend([8,9])
+>>> t
+[1, 2, 3, 4, 4, 5, 6, 6, 8, 9]
+>>> t.extend(8)
+Traceback (most recent call last):
+  File "<pyshell#232>", line 1, in <module>
+    t.extend(8)
+TypeError: 'int' object is not iterable
+
+Python 3.9.6 (tags/v3.9.6:db3ff76, Jun 28 2021, 15:26:21) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> t1=()
+>>> t1
+()
+>>> t2=(1)
+>>> t2
+1
+>>> t3=(1,3,5)
+>>> t3
+(1, 3, 5)
+>>> t4=('a','b',('ab','cd'))
+>>> t4
+('a', 'b', ('ab', 'cd'))
+>>> t5=5,6,7
+>>> t5
+(5, 6, 7)
+>>> t1=(1,2,'a','b')
+>>> t1
+(1, 2, 'a', 'b')
+>>> del t1[0]
+Traceback (most recent call last):
+  File "<pyshell#12>", line 1, in <module>
+    del t1[0]
+TypeError: 'tuple' object doesn't support item deletion
+>>> t1[2]=34
+Traceback (most recent call last):
+  File "<pyshell#13>", line 1, in <module>
+    t1[2]=34
+TypeError: 'tuple' object does not support item assignment
+>>> t1[0]
+1
+>>> t1[3]
+'b'
+>>> t1[1:]
+(2, 'a', 'b')
+>>> t2=3,4,5,6
+>>> t1+t2
+(1, 2, 'a', 'b', 3, 4, 5, 6)
+>>> t2*3
+(3, 4, 5, 6, 3, 4, 5, 6, 3, 4, 5, 6)
+>>> len(t1)
+4
+>>> len(t2)
+4
+>>> dic = {'name':'eunwoo', 'birth':'0205', 'hobby':'game'}
+>>> dic
+{'name': 'eunwoo', 'birth': '0205', 'hobby': 'game'}
+>>> dic2={1:'Life', 2:'is', 3:'too', 4:'short'}
+>>> dic2
+{1: 'Life', 2: 'is', 3: 'too', 4: 'short'}
+>>> dic3={1:[1,2,3]}
+>>> dic3
+{1: [1, 2, 3]}
+>>> dic2[5]='python'
+>>> dic2
+{1: 'Life', 2: 'is', 3: 'too', 4: 'short', 5: 'python'}
+>>> del dic2[3]
+>>> dic2
+{1: 'Life', 2: 'is', 4: 'short', 5: 'python'}
+>>> dic['name']
+'eunwoo'
+>>> a={1:'a', 1:'python'}
+>>> a
+{1: 'python'}
+>>> a[1]='b'
+>>> a
+{1: 'b'}
+>>> a[[1,2]]='b'
+Traceback (most recent call last):
+  File "<pyshell#37>", line 1, in <module>
+    a[[1,2]]='b'
+TypeError: unhashable type: 'list'
+>>> a={1,2:'b'}
+SyntaxError: invalid syntax
+>>> a
+{1: 'b'}
+>>> dic.keys()
+dict_keys(['name', 'birth', 'hobby'])
+>>> for k in a.keys():
+	print(k)
+
+	
+1
+>>> 
+>>> 
+>>> 
+>>> for k in dic.keys():
+		print(k)
+
+		
+name
+birth
+hobby
+>>> list(dic.keys())
+['name', 'birth', 'hobby']
+>>> dic.values()
+dict_values(['eunwoo', '0205', 'game'])
+>>> dic.items()
+dict_items([('name', 'eunwoo'), ('birth', '0205'), ('hobby', 'game')])
+>>> list(dic.items())
+[('name', 'eunwoo'), ('birth', '0205'), ('hobby', 'game')]
+>>> dic.clear()
+>>> dic
+{}
+>>> a
+{1: 'b'}
+>>> a[(1,2)]='a'
+>>> a
+{1: 'b', (1, 2): 'a'}
+>>> a.get(1)
+'b'
+>>> a.get((1,2))
+'a'
+>>> a.get(3)
+>>> None
+>>> t1=(1,2)
+>>> t1
+(1, 2)
+>>> s1=set([1,2,3])
+>>> s1
+{1, 2, 3}
+>>> s2=set("python")
+>>> s2
+{'o', 'p', 'y', 'h', 'n', 't'}
+>>> s3=set("life is too")
+>>> s3
+{'o', 'i', 'f', ' ', 's', 'l', 'e', 't'}
+>>> s1
+{1, 2, 3}
+>>> l1=list(s1)
+>>> l1
+[1, 2, 3]
+>>> l1[0]
+1
+>>> t1=tuple(s1)
+>>> t1
+(1, 2, 3)
+>>> t1[0]
+1
+>>> s1=set([1,2,3,4,5,6])
+>>> s2=set([3,4,5,6,7,8])
+>>> s1
+{1, 2, 3, 4, 5, 6}
+>>> s2
+{3, 4, 5, 6, 7, 8}
+>>> s1&s2
+{3, 4, 5, 6}
+>>> s1-s2
+{1, 2}
+>>> s2-s1
+{8, 7}
+>>> s1.intersection(s2)
+{3, 4, 5, 6}
+>>> s1+s2
+Traceback (most recent call last):
+  File "<pyshell#87>", line 1, in <module>
+    s1+s2
+TypeError: unsupported operand type(s) for +: 'set' and 'set'
+>>> s1|s2
+{1, 2, 3, 4, 5, 6, 7, 8}
+>>> s1.union(s2)
+{1, 2, 3, 4, 5, 6, 7, 8}
+>>> s1.difference(s2)
+{1, 2}
+>>> s1.add(9)
+>>> s1
+{1, 2, 3, 4, 5, 6, 9}
+>>> s1.add(3)
+>>> s1
+{1, 2, 3, 4, 5, 6, 9}
+>>> s1.update([7,6,4,0])
+>>> s1
+{0, 1, 2, 3, 4, 5, 6, 7, 9}
+>>> s1.remove(0)
+>>> s1
+{1, 2, 3, 4, 5, 6, 7, 9}
+>>> kor=80
+>>> mat=75
+>>> eng=55
+>>> sum=kor+mat+eng
+>>> sum
+210
+>>> if(13%2==0){print("짝수")}else{print("홀수")}
+SyntaxError: invalid syntax
+>>> if(13%2==0){print("짝수")}else{print("홀수")}
+SyntaxError: invalid syntax
+>>> if(13%2==0){print("짝수")}else{print("홀수")}
+SyntaxError: invalid syntax
+>>> if(13%2==0)
+SyntaxError: invalid syntax
+>>> if(13%2==0):print("짝수")else:print("홀수")
+SyntaxError: invalid syntax
+>>> num=["881120-1068324"]
+>>> num[:7]
+['881120-1068324']
+>>> num=881120-1068324
+>>> num
+-187204
+>>> num=[8,8,1,1,2,0,-,1,0,6,8,3,2,4]
+SyntaxError: invalid syntax
+>>> num=[8,8,1,1,2,0,'-',1,0,6,8,3,2,4]
+>>> num
+[8, 8, 1, 1, 2, 0, '-', 1, 0, 6, 8, 3, 2, 4]
+>>> num[:6]
+[8, 8, 1, 1, 2, 0]
+>>> num[7:]
+[1, 0, 6, 8, 3, 2, 4]
+>>> pin=”881120-1068324”
+SyntaxError: invalid character '”' (U+201D)
+>>> pin="881120-1068324"
+>>> pin
+'881120-1068324'
+>>> yymmdd="19"+pin[:6]
+>>> num=pin[7:]
+>>> print(yymmdd)
+19881120
+>>> print(pin)
+881120-1068324
+>>> pin="881120-1068324"
+>>> yymmdd="19"+pin[:6]
+>>> pin=num[7:]
+>>> print(yymmdd)
+19881120
+>>> print(pin)
+
+>>> pin
+''
+>>> pin=num[7:]
+>>> pin
+''
+>>> pin="num[7:]
+SyntaxError: EOL while scanning string literal
+>>> pin="num[7:]"
+>>> pin
+'num[7:]'
+>>> pin="881120-1068324"
+>>> yymmdd="19"+pin[:6]
+>>> num=pin[7:]
+>>> print(yymmdd)
+19881120
+>>> print(num)
+1068324
+>>> str='a:b:c:D'
+>>> str.replace(':','#',3)
+'a#b#c#D'
+>>> li=[1,3,4,5,2]
+>>> li.resort()
+Traceback (most recent call last):
+  File "<pyshell#144>", line 1, in <module>
+    li.resort()
+AttributeError: 'list' object has no attribute 'resort'
+>>> li.unsort()
+Traceback (most recent call last):
+  File "<pyshell#145>", line 1, in <module>
+    li.unsort()
+AttributeError: 'list' object has no attribute 'unsort'
+>>> li.sort()
+>>> li.reverse
+<built-in method reverse of list object at 0x000001704B6AE0C0>
+>>> li.reverse()
+>>> li
+[5, 4, 3, 2, 1]
+>>> li=[1,3,4,5,2]
+>>> li.sort()
+>>> li.reverse
+<built-in method reverse of list object at 0x000001704B64D440>
+>>> li=[1,3,4,5,2]
+>>> li.sort()
+>>> li.reverse()
+>>> li
+[5, 4, 3, 2, 1]
+>>> li=['Life','is','too','short']
+>>> result=li[0]+ li[1]+ li[2]+ li[3]
+>>> print(result)
+Lifeistooshort
+>>> li.split(',')
+Traceback (most recent call last):
+  File "<pyshell#160>", line 1, in <module>
+    li.split(',')
+AttributeError: 'list' object has no attribute 'split'
+>>> li
+['Life', 'is', 'too', 'short']
+>>> li=['Life','is','too','short']
+>>> result=li[0]+ +li[1]+ +li[2]+ +li[3]
+Traceback (most recent call last):
+  File "<pyshell#163>", line 1, in <module>
+    result=li[0]+ +li[1]+ +li[2]+ +li[3]
+TypeError: bad operand type for unary +: 'str'
+>>> li=['Life','is','too','short']
+>>> result=li[0]+' '+li[1]+' '+li[2]+' '+li[3]
+>>> print(result)
+Life is too short
+>>> tu=1,2,3
+>>> tu.add(4)
+Traceback (most recent call last):
+  File "<pyshell#168>", line 1, in <module>
+    tu.add(4)
+AttributeError: 'tuple' object has no attribute 'add'
+>>> t1=1,2,3
+>>> t1+4
+Traceback (most recent call last):
+  File "<pyshell#170>", line 1, in <module>
+    t1+4
+TypeError: can only concatenate tuple (not "int") to tuple
+>>> t1=1,2,3
+>>> t1+(4)
+Traceback (most recent call last):
+  File "<pyshell#172>", line 1, in <module>
+    t1+(4)
+TypeError: can only concatenate tuple (not "int") to tuple
+>>> t1=1,2,3
+>>> t1=t1+(4)
+Traceback (most recent call last):
+  File "<pyshell#174>", line 1, in <module>
+    t1=t1+(4)
+TypeError: can only concatenate tuple (not "int") to tuple
+>>> t1=t1+(4,)
+>>> t1
+(1, 2, 3, 4)
+>>> t1=1,2,3
+>>> t1=t1+4,
+Traceback (most recent call last):
+  File "<pyshell#178>", line 1, in <module>
+    t1=t1+4,
+TypeError: can only concatenate tuple (not "int") to tuple
+>>> t1=1,2,3
+>>> t1=t1+(4,)
+>>> print(t1)
+(1, 2, 3, 4)
+>>> a=dict()
+>>> a
+{}
+>>> a['name']='python'
+>>> a[('a'.,)='python'
+  
+SyntaxError: invalid syntax
+>>> a[('a',)='python'
+  
+SyntaxError: invalid syntax
+>>> a[[1]] = ‘python’
+
+SyntaxError: invalid character '‘' (U+2018)
+>>> a[[1]] = 'python'
+Traceback (most recent call last):
+  File "<pyshell#188>", line 1, in <module>
+    a[[1]] = 'python'
+TypeError: unhashable type: 'list'
+>>> a[250] = 'python'
+>>> a
+{'name': 'python', 250: 'python'}
+>>> a[('a',)]='python'
+>>> a
+{'name': 'python', 250: 'python', ('a',): 'python'}
+>>> a[[1]]='python'
+Traceback (most recent call last):
+  File "<pyshell#193>", line 1, in <module>
+    a[[1]]='python'
+TypeError: unhashable type: 'list'
+>>> a=[1,1,1,1,2,2,3,3,4,5,6,7,8]
+
+>>> aSet=a
+>>> b=aSet
+>>> print(b)
+[1, 1, 1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 8]
+>>> aSet
+[1, 1, 1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 8]
+>>> a=[1,1,1,1,2,2,3,3,4,5,6,7,8]
+>>> aSet=set(a)
+>>> b=aSet
+>>> print(b)
+{1, 2, 3, 4, 5, 6, 7, 8}
+>>> money=True
+>>> if money:
+		print("taxi")
+
+		
+taxi
+>>> 
+======================================================================================== RESTART: C:/Users/user/Desktop/잉/공부/코딩/python/방학방과후/if.py ========================================================================================
+Taxi
+>>> x=3
+>>> y=2
+>>> x>y
+True
+>>> 
+======================================================================================== RESTART: C:/Users/user/Desktop/잉/공부/코딩/python/방학방과후/if.py ========================================================================================
+True
+>>> 
+======================================================================================== RESTART: C:/Users/user/Desktop/잉/공부/코딩/python/방학방과후/if.py ========================================================================================
+Traceback (most recent call last):
+  File "C:/Users/user/Desktop/잉/공부/코딩/python/방학방과후/if.py", line 2, in <module>
+    card=false
+NameError: name 'false' is not defined
+>>> 
+======================================================================================== RESTART: C:/Users/user/Desktop/잉/공부/코딩/python/방학방과후/if.py ========================================================================================
+Taxi
+>>> 1 !in [1,2,3]
+SyntaxError: invalid syntax
+>>> 
+======================================================================================== RESTART: C:/Users/user/Desktop/잉/공부/코딩/python/방학방과후/if.py ========================================================================================
+Walk
+>>> 
+======================================================================================== RESTART: C:/Users/user/Desktop/잉/공부/코딩/python/방학방과후/if.py ========================================================================================
+걸어가세연
+>>> pocket=[wallet=['money','card'],'phone','Buds']
+
+SyntaxError: invalid syntax
+>>> 
+======================================================================================== RESTART: C:/Users/user/Desktop/잉/공부/코딩/python/방학방과후/if.py ========================================================================================
+걸어다니는 풀은? 뚜벅초 ㅋㅋㅋㅋㅋㅋ
 >>> 
