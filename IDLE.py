@@ -973,4 +973,375 @@ SyntaxError: invalid syntax
 >>> 
 ======================================================================================== RESTART: C:/Users/user/Desktop/잉/공부/코딩/python/방학방과후/if.py ========================================================================================
 걸어다니는 풀은? 뚜벅초 ㅋㅋㅋㅋㅋㅋ
+
+Python 3.9.6 (tags/v3.9.6:db3ff76, Jun 28 2021, 15:26:21) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> i=1
+>>> j=1
+>>> while i<=5:
+	while j<=i:
+		print("*")
+		j+=1
+	print("\n")
+	i+=1
+
+	
+*
+
+
+*
+
+
+*
+
+
+*
+
+
+*
+
+
+>>> while i<=5:
+	j=1
+	while j<=i:
+		print("*")
+		j+=1
+	print("\n")
+	i+=1
+
+	
+>>> 
+>>> while i<=5:
+	j=1
+	while j<=i:
+		print("*")
+		j+=1
+	print("\n")
+	i+=1
+
+	
+>>> while i<=5:
+	j=1
+	while j<=i:
+		print("*")
+		j+=1
+	print("\n")
+	i+=1
+
+	
+>>> 
+>>> i=1
+>>> while i<=5:
+	j=1
+	while j<=i:
+		print("*")
+		j+=1
+	print("\n")
+	i+=1
+
+	
+*
+
+
+*
+*
+
+
+*
+*
+*
+
+
+*
+*
+*
+*
+
+
+*
+*
+*
+*
+*
+
+
+>>> i=1
+>>> while i<=5
+SyntaxError: invalid syntax
+>>> while i<=5:
+	print(i*'*')
+	print("\n")
+	i+=1
+
+	
+*
+
+
+**
+
+
+***
+
+
+****
+
+
+*****
+
+
+>>> for i in range(1,101)
+SyntaxError: invalid syntax
+>>> for i in range(1,101):
+	print(i )
+
+	
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+>>> A=[70,60,55,75,95,90,80,80,85,100]
+>>> total=0
+>>> for score in A:
+	total += score
+average=total/len(A)
+SyntaxError: invalid syntax
+>>> A=[70,60,55,75,95,90,80,80,85,100]
+>>> total=0
+>>> average=0
+>>> for score in A:
+	total += score
+average=total/len(A)
+SyntaxError: invalid syntax
+>>> A=[70,60,55,75,95,90,80,80,85,100]
+>>> total=0
+>>> for score in A:
+	total += score
+	
+SyntaxError: multiple statements found while compiling a single statement
+>>> A=[70,60,55,75,95,90,80,80,85,100]
+>>> total=0
+>>> for score in A:
+	total +=score
+
+	
+>>> average=total/len(A)
+>>> print(average)
+79.0
+>>> def add(a,b):
+	return a+b
+
+>>> a=5
+>>> b=10
+>>> c=add(a,b)
+>>> c
+15
+>>> def add(a,b):
+	result=a+b
+	return result
+
+>>> a=add(3,4)
+>>> a
+7
+>>> def say()
+SyntaxError: invalid syntax
+>>> def say():
+	return('Hi')
+a=say()
+SyntaxError: invalid syntax
+>>> a=say()
+Traceback (most recent call last):
+  File "<pyshell#71>", line 1, in <module>
+    a=say()
+NameError: name 'say' is not defined
+>>> def say():
+	return('Hi')
+
+>>> a=say()
+>>> a
+'Hi'
+>>> def add(a,b):
+	print("%d , %d의 합은 %d입니다." %(a,b,a+b))
+
+	
+>>> add(3,4)
+3 , 4의 합은 7입니다.
+>>> def say():
+	print("hi")
+
+	
+>>> say()
+hi
+>>> def add(a,b):
+	return a+b
+
+>>> result=add(3,7)
+>>> result
+10
+>>> result=add(b=3,a=5)
+>>> result
+8
+>>> def A(a,b):
+	return a-b
+
+>>> result = A(b=5,a=9)
+>>> result
+4
+>>> def add_many(*args):
+	result = 0
+	for i in args:
+		result=result+i
+	return result
+
+>>> result = add_many(1,2,3,4,5,6,7)
+>>> result
+28
+>>> defvadd_many(choice,*args):
+	
+SyntaxError: invalid syntax
+>>> def add_many(choice,*args):
+	if choice == "add":
+		result = 0
+		for i in args:
+			result= result+i
+	elif choice=="mul":
+		result=1
+		for i in args:
+			result=result*i
+	return result
+
+>>> result = add_many('add',4,5,6,7,8,9,0)
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> result
+39
+>>> result = add_many('mul',6,7,8,9,4,5)
+>>> result
+60480
+>>> def add_mul(a,b):
+	return a+b,a*b
+
+>>> result=add_mul(7,8)
+>>> result
+(15, 56)
+>>> def add_mul(a,b):
+	return a+b
+	return a*b
+
+>>> result=add_mul(7,8)
+>>> result
+15
+>>> def say  (eunwoo):
+	if eunwoo=="바보":
+		return
+	print("나의 별명은 %s입니다."%eunwoo)
+
+	
+>>> say('은우')
+나의 별명은 은우입니다.
+>>> say('바보')
+>>> say('리으눙')
+나의 별명은 리으눙입니다.
 >>> 
